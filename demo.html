@@ -306,8 +306,8 @@ var exports = {
         clearInterval(exports.config.timer);
     },
     log:function(str){
-        str=$("#toolinfo").html()+"/\\"+str;
-        $("#toolinfo").html(str);
+        var ss=$("#toolinfo").html()+"<span>"+str+"</span>"
+        $("#toolinfo").html(ss);
     }
 }
 exports.init();
