@@ -50,7 +50,7 @@
 
 <script src="./jquery.js"></script>  
 <script type="text/javascript">
-var $notes = $('.notes'),//音符
+var $notes = $('.notes'),oldtype=1,//音符
     $bottomBarrier = $('.bottom-barrier');
     navigator.getUserMedia = (navigator.getUserMedia ||
                    navigator.webkitGetUserMedia ||
@@ -273,8 +273,7 @@ var exports = {
     createBarrier:function (num) {//创建障碍物，num个数
         console.log(num);
         var $bc = $('.bottom-barrier'),
-            random = parseInt(Math.random()*10),
-            type = 1;
+            random = parseInt(Math.random()*10),type=1;
         if (num <= 1) {
             num = 1;//没有指定个数默认为1个
             switch (exports.config.rank) {
@@ -292,9 +291,13 @@ var exports = {
         $bc.append(exports.getBarrier(num,type));
     },
     getBarrier:function (num,type) {//获取障碍物
-        var html = "";
+        var html = "",height="200px";
+        if( type!=oldtype && type==1 ){
+            oldtype=type;
+            height=(Math.random()*10 + 15).toFixed(0) * 10 +"px";
+        }
         for(var i = 0; i < num; i++){
-            html += '<div class="barrier '+(type === 1 ? "barrier-high" : "barrier-low")+'" data-id="'+new Date().getTime()+'">》</div>'
+            html += '<div height='+height+' class="barrier '+(type === 1 ? "barrier-high" : "barrier-low")+'" data-id="'+new Date().getTime()+'">》</div>'
         }
         return html;
     },
