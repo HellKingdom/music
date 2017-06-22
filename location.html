@@ -6,6 +6,7 @@
 var x=document.getElementById("demo");
 function getLocation()
   {
+    console.log(navigator.geolocation);
   if (navigator.geolocation)
     {
     navigator.geolocation.getCurrentPosition(showPosition);
@@ -14,6 +15,7 @@ function getLocation()
   }
 function showPosition(position)
   {
+    console.log(111);
     console.log(position);
     console.log(position.coords.latitude);
   x.innerHTML="Latitude: " + position.coords.latitude + 
