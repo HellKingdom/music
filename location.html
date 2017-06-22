@@ -14,7 +14,7 @@ function getLocation()
           },function(err){
             console.log(err);
             alert(err.code)
-          },{enableHighAccuracy:true , timeout:0 , maximumAge:864000000});
+          },{enableHighAccuracy:true , timeout:0 , maximumAge:0});
       }
       else{
         alert( "不支持" );
