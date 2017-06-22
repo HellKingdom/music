@@ -13,8 +13,8 @@ function getLocation()
             alert(1)
           },function(err){
             console.log(err);
-            alert(3)
-          },{enableHighAccuracy:true , timeout:5000 , maximumAge:864000000});
+            alert(err.code)
+          },{enableHighAccuracy:true , timeout:0 , maximumAge:864000000});
       }
       else{
         alert( "不支持" );
