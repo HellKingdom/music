@@ -6,12 +6,14 @@
 console.log(navigator.geolocation)
 function getLocation()
   {
-        console.log(navigator.geolocation);
+      console.log(navigator.geolocation);
       if (navigator.geolocation){
           navigator.geolocation.getCurrentPosition(function(res){
             console.log(res);
+            alert(1)
           },function(err){
             console.log(err);
+            alert(3)
           },{enableHighAccuracy:true , timeout:5000 , maximumAge:864000000});
       }
       else{
