@@ -10,6 +10,12 @@ function getLocation()
       if (navigator.geolocation){
           navigator.geolocation.getCurrentPosition(function(res){
             console.log(res);coords.longitude
+            alert(1);
+            str= res.coords.latitude +"====="+res.coords.longitude
+            document.write(str)            
+            alert( res )
+            alert(res.coords);
+
             alert(res.coords.latitude)
             alert(res.coords.longitude)
           },function(err){
