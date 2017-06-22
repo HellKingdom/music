@@ -6,17 +6,17 @@
 console.log(navigator.geolocation)
 function getLocation()
   {
-    console.log(navigator.geolocation);
-  if (navigator.geolocation)
-    {
-    navigator.geolocation.getCurrentPosition(function(res){
-      console.log(res);
-    },function(err){
-      console.log(err);
-    },{enableHighAccuracy:true , timeout:5000 , maximumAge:864000000});
-  else{
-    alert( "不支持" );
-  }
+        console.log(navigator.geolocation);
+      if (navigator.geolocation){
+          navigator.geolocation.getCurrentPosition(function(res){
+            console.log(res);
+          },function(err){
+            console.log(err);
+          },{enableHighAccuracy:true , timeout:5000 , maximumAge:864000000});
+      }
+      else{
+        alert( "不支持" );
+      }
   }
   getLocation();
 </script>
